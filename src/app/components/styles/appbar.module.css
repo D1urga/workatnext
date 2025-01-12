@@ -23,7 +23,7 @@
   }
   .ticon {
     height: 25;
-    /* color: white; */
+    color: black;
   }
   .title {
     font-weight: 800;
@@ -94,7 +94,7 @@
   }
   .ticon {
     height: 25px;
-    /* color: white; */
+    color: black;
   }
   .title {
     font-weight: 800;
@@ -159,7 +159,7 @@
   }
   .ticon {
     height: 24px;
-    /* color: white; */
+    color: black;
   }
   .title {
     font-weight: 800;
