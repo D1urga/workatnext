@@ -20,6 +20,10 @@
   .div2 {
     width: 50%;
   }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
   .img {
     height: 100%;
     width: 100%;
@@ -92,6 +96,16 @@
     border-radius: 2px;
     padding: 2px 4px;
   }
+  .message {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    background-color: rgb(159, 159, 239);
+    padding: 8px 20px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 
   @media (prefers-color-scheme: dark) {
     .main {
@@ -114,131 +128,13 @@
     }
     .p1 {
       color: rgb(46, 46, 175);
+    }
+    .message {
+      color: black;
     }
   }
 }
 @media screen and (max-width: 900px) and (min-width: 520px) {
-  .main {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    height: 100vh;
-    width: 100vw;
-    z-index: 999;
-  }
-  .div1 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  .div2 {
-    display: none;
-    width: 50%;
-  }
-  .img {
-    height: 100%;
-    width: 100%;
-    object-fit: fill;
-  }
-  .input {
-    height: 50px;
-    width: 70vw;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    padding: 0 15px;
-    margin: 5px 0;
-    background-color: rgb(235, 235, 235);
-    font-weight: 600;
-  }
-  .btn {
-    height: 50px;
-    width: 70vw;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    padding: 0 15px;
-    margin: 5px 0;
-    background-color: rgb(30, 143, 184);
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-  }
-  .option {
-    display: flex;
-    width: 70vw;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 10px 30px;
-  }
-  .p1 {
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 0;
-    color: blue;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  .ti {
-    width: 70vw;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(235, 235, 235);
-    padding: 5px 10px;
-    border-radius: 30px;
-    user-select: none;
-    margin-bottom: 30px;
-  }
-  .ticon {
-    height: 30px;
-    color: black;
-  }
-  .title {
-    font-weight: 900;
-    /* color: white; */
-    font-family: sans-serif;
-    font-size: 20px;
-    border-radius: 2px;
-    padding: 2px 4px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .main {
-      background-color: rgb(0, 0, 0);
-    }
-    .name {
-      background-color: #202020;
-    }
-    .ticon {
-      color: white;
-    }
-    .input {
-      background-color: #202020;
-    }
-    .img {
-      filter: brightness(0.5);
-    }
-    .btn {
-      background-color: rgb(43, 116, 143);
-    }
-    .p1 {
-      color: rgb(46, 46, 175);
-    }
-  }
-}
-@media screen and (max-width: 520px) {
   .main {
     position: fixed;
     display: flex;
@@ -258,7 +154,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70h;
+    height: 65h;
     padding-bottom: 10vh;
   }
   .div2 {
@@ -267,7 +163,11 @@
     justify-content: center;
     padding: 1vh 0 0 0;
     width: 100%;
-    height: 30vh;
+    height: 35vh;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
   }
   .img {
     height: 80%;
@@ -341,6 +241,16 @@
     border-radius: 2px;
     padding: 2px 4px;
   }
+  .message {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    background-color: rgb(159, 159, 239);
+    padding: 8px 20px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 
   @media (prefers-color-scheme: dark) {
     .main {
@@ -363,6 +273,154 @@
     }
     .p1 {
       color: rgb(36, 36, 251);
+    }
+    .message {
+      color: black;
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  .main {
+    position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+  }
+  .div1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70h;
+    padding-bottom: 10vh;
+  }
+  .div2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0 0 0;
+    width: 100%;
+    height: 30vh;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .img {
+    height: 80%;
+    width: 80%;
+    object-fit: fill;
+  }
+  .input {
+    height: 50px;
+    width: 90vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    margin: 5px 0;
+    background-color: rgb(235, 235, 235);
+    font-weight: 600;
+  }
+  .btn {
+    height: 50px;
+    width: 90vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(36, 36, 251);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+  }
+  .option {
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px;
+  }
+  .p1 {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 0;
+    color: rgb(36, 36, 251);
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .ti {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 10px;
+    border-radius: 30px;
+    user-select: none;
+    margin-bottom: 10px;
+  }
+  .ticon {
+    height: 30px;
+    color: black;
+  }
+  .title {
+    font-weight: 900;
+    /* color: white; */
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+  .message {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgb(159, 159, 239);
+    padding: 8px 20px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .main {
+      background-color: rgb(0, 0, 0);
+    }
+    .name {
+      background-color: #202020;
+    }
+    .ticon {
+      color: white;
+    }
+    .input {
+      background-color: #202020;
+    }
+    .img {
+      filter: brightness(0.5);
+    }
+    .btn {
+      background-color: rgb(36, 36, 251);
+    }
+    .p1 {
+      color: rgb(36, 36, 251);
+    }
+    .message {
+      color: black;
     }
   }
 }
