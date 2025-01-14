@@ -1,13 +1,365 @@
 @media screen and (min-width: 900px) {
+  .main {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+  }
+  .div1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .div2 {
+    width: 50%;
+  }
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  .input {
+    height: 50px;
+    width: 20vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(235, 235, 235);
+    font-weight: 600;
+  }
+  .btn {
+    height: 50px;
+    width: 20vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(30, 143, 184);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+  }
+  .option {
+    display: flex;
+    width: 20vw;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px;
+  }
+  .p1 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 0;
+    color: blue;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .ti {
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 10px;
+    border-radius: 30px;
+    user-select: none;
+    margin-bottom: 30px;
+  }
+  .ticon {
+    height: 30px;
+    color: black;
+  }
+  .title {
+    font-weight: 900;
+    /* color: white; */
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
   @media (prefers-color-scheme: dark) {
+    .main {
+      background-color: rgb(0, 0, 0);
+    }
+    .name {
+      background-color: #202020;
+    }
+    .ticon {
+      color: white;
+    }
+    .input {
+      background-color: #202020;
+    }
+    .img {
+      filter: brightness(0.5);
+    }
+    .btn {
+      background-color: rgb(43, 116, 143);
+    }
+    .p1 {
+      color: rgb(46, 46, 175);
+    }
   }
 }
 @media screen and (max-width: 900px) and (min-width: 520px) {
+  .main {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+  }
+  .div1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .div2 {
+    display: none;
+    width: 50%;
+  }
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  .input {
+    height: 50px;
+    width: 70vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(235, 235, 235);
+    font-weight: 600;
+  }
+  .btn {
+    height: 50px;
+    width: 70vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(30, 143, 184);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+  }
+  .option {
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px;
+  }
+  .p1 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 0;
+    color: blue;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .ti {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 10px;
+    border-radius: 30px;
+    user-select: none;
+    margin-bottom: 30px;
+  }
+  .ticon {
+    height: 30px;
+    color: black;
+  }
+  .title {
+    font-weight: 900;
+    /* color: white; */
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
   @media (prefers-color-scheme: dark) {
+    .main {
+      background-color: rgb(0, 0, 0);
+    }
+    .name {
+      background-color: #202020;
+    }
+    .ticon {
+      color: white;
+    }
+    .input {
+      background-color: #202020;
+    }
+    .img {
+      filter: brightness(0.5);
+    }
+    .btn {
+      background-color: rgb(43, 116, 143);
+    }
+    .p1 {
+      color: rgb(46, 46, 175);
+    }
   }
 }
 @media screen and (max-width: 520px) {
+  .main {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+  }
+  .div1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .div2 {
+    /* display: none; */
+    position: fixed;
+    width: 100%;
+  }
+  .img {
+    display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    opacity: 0.4;
+  }
+  .input {
+    height: 50px;
+    width: 80vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(235, 235, 235);
+    font-weight: 600;
+  }
+  .btn {
+    height: 50px;
+    width: 80vw;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    margin: 5px 0;
+    background-color: rgb(30, 143, 184);
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+  }
+  .option {
+    display: flex;
+    width: 80vw;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px;
+  }
+  .p1 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 0;
+    color: blue;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .ti {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 10px;
+    border-radius: 30px;
+    user-select: none;
+    margin-bottom: 30px;
+  }
+  .ticon {
+    height: 30px;
+    color: black;
+  }
+  .title {
+    font-weight: 900;
+    /* color: white; */
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
   @media (prefers-color-scheme: dark) {
+    .main {
+      background-color: rgb(0, 0, 0);
+    }
+    .name {
+      background-color: #202020;
+    }
+    .ticon {
+      color: white;
+    }
+    .input {
+      background-color: #202020;
+    }
+    .img {
+      filter: brightness(0.5);
+    }
+    .btn {
+      background-color: rgb(43, 116, 143);
+    }
+    .p1 {
+      color: rgb(46, 46, 175);
+    }
   }
 }
 
