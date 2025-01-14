@@ -3,12 +3,20 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Circle from "./components/circle.js";
 import { AtSymbolIcon } from "@heroicons/react/20/solid";
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    const getuser = localStorage.getItem("userid");
+    if (getuser) {
+      router.push("/landingpage");
+    }
+  }, []);
+
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -30,7 +38,7 @@ export default function Home() {
     setIsloading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/user/register",
+        "https://workatbackend.onrender.com/api/v1/user/register",
         formDataRegister
       );
       setMessage(response.data.message);
@@ -47,13 +55,49 @@ export default function Home() {
     }
     setIsloading(false);
   };
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    setIsloading(true);
+    try {
+      const response = await axios.post(
+        "https://workatbackend.onrender.com/api/v1/user/login",
+        formData,
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      if (response.status === 200) {
+        // Redirect to home page
+
+        setMessage(response.data.message);
+        setTimeout(() => {
+          setMessage("");
+        }, 5000);
+        localStorage.setItem("userid", response.data.data.user._id);
+        // localStorage.setItem("key", "value");
+        router.push("/landingpage");
+      }
+    } catch (error) {
+      setMessage(error.response?.data?.message || "Something went wrong");
+
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
+    }
+    setIsloading(false);
+  };
 
   const handleOtp = async (e) => {
     e.preventDefault();
     setIsloading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/user/verify",
+        "https://workatbackend.onrender.com/api/v1/user/verify",
         {
           email: formDataRegister.email,
           otp: formDataOtp.otp,
@@ -96,36 +140,29 @@ export default function Home() {
               <p className={styles.title}>AT</p>
             </div>
           </div>
-          <input
-            className={styles.input}
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-            placeholder="Username"
-          ></input>
-          <input
-            className={styles.input}
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Email"
-          ></input>
-          <input
-            className={styles.input}
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            placeholder="Password"
-          ></input>
-          <button className={styles.btn}>
-            {!isLoading ? "Login" : "Please wait"}
-          </button>
+          <form className={styles.form} onSubmit={handleSubmitLogin}>
+            <input
+              className={styles.input}
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="Email"
+            ></input>
+            <input
+              className={styles.input}
+              type="text"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              placeholder="Password"
+            ></input>
+            <button className={styles.btn} type="submit">
+              {!isLoading ? "Login" : "Please wait"}
+            </button>
+          </form>
           <div className={styles.option}>
             <p
               className={styles.p1}
