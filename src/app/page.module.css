@@ -256,10 +256,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 250px);
+    height: calc(100vh - 200px);
   }
   .div2 {
-    padding: 0px;
+    padding: 40px 0 0 0;
     width: 100%;
     height: 200px;
   }
@@ -353,10 +353,10 @@
       filter: brightness(0.5);
     }
     .btn {
-      background-color: blue;
+      background-color: rgb(31, 31, 246);
     }
     .p1 {
-      color: blue;
+      color: rgb(31, 31, 246);
     }
   }
 }
