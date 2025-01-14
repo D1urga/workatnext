@@ -131,6 +131,7 @@ export default function Home() {
               className={styles.p1}
               onClick={() => {
                 setLogin(!login);
+                setOtp(false);
               }}
             >
               Dont have account? Signup
