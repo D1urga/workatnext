@@ -34,9 +34,15 @@ export default function Home() {
         formDataRegister
       );
       setMessage(response.data.message);
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
       setOtp(true);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
       console.log(error);
     }
     setIsloading(false);
@@ -54,10 +60,16 @@ export default function Home() {
         }
       );
       setMessage(response.data.message);
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
       setLogin(true);
       setOtp(false);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
+      setTimeout(() => {
+        setMessage("");
+      }, 5000);
       console.log(error);
     }
     setIsloading(false);
