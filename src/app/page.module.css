@@ -257,6 +257,7 @@
     align-items: center;
     justify-content: center;
     height: calc(100vh - 200px);
+    padding-bottom: 30px;
   }
   .div2 {
     padding: 40px 0 0 0;
