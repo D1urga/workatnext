@@ -21,6 +21,7 @@
     background-color: rgb(244, 244, 244);
     padding: 5px 10px;
     border-radius: 30px;
+    user-select: none;
   }
   .ticon {
     height: 25px;
@@ -35,7 +36,8 @@
     padding: 2px 4px;
   }
 
-  .icons {
+  .icons,
+  .icons1 {
     display: flex;
     height: 280px;
     flex-direction: column;
@@ -107,6 +109,7 @@
     padding: 5px 10px;
     background-color: rgb(244, 244, 244);
     border-radius: 30px;
+    user-select: none;
   }
   .ticon {
     height: 25px;
@@ -123,14 +126,24 @@
 
   .icons {
     display: flex;
-    width: 50vw;
+    flex-direction: column;
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 30vh;
+    width: 65px;
+    height: 300px;
+    padding: 30px 0;
     justify-content: space-between;
     align-items: center;
     justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .icon {
-    height: 24px;
-    color: rgb(97, 97, 97);
+    height: 25px;
+    color: rgb(236, 236, 236);
   }
   .btn {
     border: none;
@@ -154,9 +167,12 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .icons {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
     .icon {
-      height: 24px;
-      color: rgb(180, 180, 180);
+      height: 25px;
+      color: rgb(36, 36, 36);
     }
     .ticon {
       height: 24px;
@@ -196,6 +212,7 @@
     padding: 5px 10px;
     background-color: rgb(244, 244, 244);
     border-radius: 30px;
+    user-select: none;
   }
   .ticon {
     height: 24px;
@@ -212,15 +229,26 @@
 
   .icons {
     display: flex;
-    width: 55vw;
+    flex-direction: column;
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 30vh;
+    width: 65px;
+    height: 300px;
+    padding: 30px 0;
     justify-content: space-between;
     align-items: center;
     justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .icon {
-    height: 24px;
-    color: rgb(97, 97, 97);
+    height: 25px;
+    color: rgb(236, 236, 236);
   }
+
   .btn {
     border: none;
     outline: none;
@@ -246,9 +274,12 @@
     .main {
       background-color: black;
     }
+    .icons {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
     .icon {
-      height: 24px;
-      color: rgb(180, 180, 180);
+      height: 25px;
+      color: rgb(36, 36, 36);
     }
     .ticon {
       height: 24px;
