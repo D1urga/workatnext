@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React, { use, useState } from "react";
 import styles from "./styles/appbar.module.css";
 import { FaHome, FaHouseUser, FaInstagram } from "react-icons/fa";
 import {
   AtSymbolIcon,
+  Bars3BottomLeftIcon,
   BriefcaseIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   ChatBubbleOvalLeftIcon,
@@ -14,13 +16,14 @@ import {
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 export default function Appbar() {
+  const [isopen, setIsopen] = useState(false);
   return (
     <div className={styles.main}>
       <div className={styles.name}>
         <AtSymbolIcon className={styles.ticon} />
         <p className={styles.title}>AT</p>
       </div>
-      <div className={styles.icons}>
+      <div className={isopen ? styles.icons : styles.icons1}>
         <Link href="">
           {" "}
           <HomeIcon className={styles.icon} />
@@ -39,6 +42,12 @@ export default function Appbar() {
         </Link>
       </div>
       <button className={styles.btn}>LogOut</button>
+      <Bars3BottomLeftIcon
+        className={styles.menu}
+        onClick={() => {
+          setIsopen(!isopen);
+        }}
+      />
     </div>
   );
 }
